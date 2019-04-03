@@ -2,17 +2,17 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: pizza-site
+  name: pizza-site-pink
 spec:
-  replicas: 3
+  replicas: 1
   template:
     metadata:
       labels:
         app: web
-        routing: internal
+        color: red
     spec:
       containers:
         - name: client
-          image: benchtest.azurecr.io/client:latest
+          image: benchtest.azurecr.io/client:red
           ports:
             - containerPort: 80
