@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: client-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: web
+    routing: internal
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80

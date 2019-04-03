@@ -1,0 +1,18 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: pizza-site
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: web
+        routing: internal
+    spec:
+      containers:
+        - name: client
+          image: benchtest.azurecr.io/client:latest
+          ports:
+            - containerPort: 80
