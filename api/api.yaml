@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: pizza-api
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      containers:
+        - name: api
+          image: benchtest.azurecr.io/api:latest
+          ports:
+            - containerPort: 8000
+          env:
+            - name: databaseURL
+              value: "pizza-test.documents.azure.com:10255"
+            - name: username
+              value: { fake }
+            - name: password
+              value: { fake }
