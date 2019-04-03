@@ -13,3 +13,7 @@ Client uses a reverse NGINX proxy to talk to the API. Requests to `/api` proxy t
 
 One deployment, two pods defined in `api.yaml`. Fronted by the service in `service.yaml`.
 Reads environment variables to contact the cosmosDB database, which is hosted outside the kubernetes framework.
+
+### TODO:
+
+Return API Dockerfile to use multi-stage to reduce size. Fix problem where `mgo` library doesn't connect via url string on ubuntu image.
