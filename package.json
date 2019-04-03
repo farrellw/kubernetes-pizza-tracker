@@ -1,0 +1,23 @@
+{
+  "name": "pizza-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "k8:admin": "az aks browse --resource-group bench-test --name tester",
+    "k8:service:client": "cd client; kubectl apply -f service.yaml",
+    "deploy:client": "cd client; kubectl apply -f client.yaml",
+    "deploy:server": "cd api; kubectl apply -f api.yaml",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/farrellw/pizza-tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/farrellw/pizza-tracker/issues"
+  },
+  "homepage": "https://github.com/farrellw/pizza-tracker#readme"
+}
